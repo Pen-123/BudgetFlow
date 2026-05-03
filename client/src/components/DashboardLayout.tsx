@@ -21,15 +21,21 @@ import {
 } from "@/components/ui/sidebar";
 import { getLoginUrl } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { LayoutDashboard, LogOut, PanelLeft, Users } from "lucide-react";
+import { LayoutDashboard, LogOut, PanelLeft, CreditCard, TrendingUp, Target, FileText, Settings, Download } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Page 1", path: "/" },
-  { icon: Users, label: "Page 2", path: "/some-path" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/" },
+  { icon: CreditCard, label: "Scan Receipt", path: "/scan" },
+  { icon: TrendingUp, label: "Insights", path: "/insights" },
+  { icon: FileText, label: "Alternatives", path: "/alternatives" },
+  { icon: Target, label: "Goals", path: "/goals" },
+  { icon: FileText, label: "Transactions", path: "/transactions" },
+  { icon: Download, label: "Export", path: "/export" },
+  { icon: Settings, label: "Settings", path: "/settings" },
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";
@@ -171,7 +177,7 @@ function DashboardLayoutContent({
               {!isCollapsed ? (
                 <div className="flex items-center gap-2 min-w-0">
                   <span className="font-semibold tracking-tight truncate">
-                    Navigation
+                    BudgetFlow
                   </span>
                 </div>
               ) : null}
